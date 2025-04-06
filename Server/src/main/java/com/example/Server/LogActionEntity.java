@@ -8,13 +8,13 @@ public class LogActionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idaction", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "name", length = 4096)
     private String name;
 
     @Column(name = "hash")
-    private Integer hash;
+    private Long hash;
 
     @Column(name = "type")
     private Short type; // TINYINT UNSIGNED можно представить как Short
@@ -23,18 +23,18 @@ public class LogActionEntity {
     private Short urlPrefix;
     public LogActionEntity() {}
 
-    public LogActionEntity(String name, Integer hash, Short type, Short urlPrefix) {
+    public LogActionEntity(String name, Long hash, Short type, Short urlPrefix) {
         this.name = name;
         this.hash = hash;
         this.type = type;
         this.urlPrefix = urlPrefix;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -46,11 +46,11 @@ public class LogActionEntity {
         this.name = name;
     }
 
-    public Integer getHash() {
+    public Long getHash() {
         return hash;
     }
 
-    public void setHash(Integer hash) {
+    public void setHash(Long hash) {
         this.hash = hash;
     }
 
