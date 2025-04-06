@@ -17,16 +17,16 @@ public class LogActionServiceImpl implements LogActionService {
         return logActionRepository.findAll();
     }
     @Override
-    public LogActionEntity readLogAction(Long id) {
+    public LogActionEntity readLogAction(Integer id) {
         return logActionRepository.findById(id).get();
     }
     @Override
-    public String deleteLogAction(Long id) {
+    public String deleteLogAction(Integer id) {
         logActionRepository.deleteById(id);
         return "Удален лог";
     }
     @Override
-    public String updateLogAction(LogActionEntity entity, Long id) {
+    public String updateLogAction(LogActionEntity entity, Integer id) {
         entity.setId(id);
         logActionRepository.save(entity);
         return "Данные лога успешно обновлены";
